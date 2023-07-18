@@ -27,6 +27,9 @@ Since we loop over 2 arrays , `O(N*M)` is the time complexity.
 This is similar to technique 2 except that I used `includes` which is better in perfomance than `filter`.
 
 
+I figured out that the time complexity and space complexity of `split` method is O(N) which further increases the complexity and decreases the performance
+
+
 
 
 
