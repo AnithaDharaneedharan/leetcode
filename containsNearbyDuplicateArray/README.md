@@ -15,7 +15,7 @@ Using the brute force method I am exhausting all possibilities with time complex
 Space complexity is O(n) because of the new hashmap created.
 
 
-`numsLength` is defined to avoid calculating the length in every iteration.
+`numsLength` is defined to avoid calculating the length of the array in every iteration.
 
 
 
