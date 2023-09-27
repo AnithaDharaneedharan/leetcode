@@ -38,6 +38,38 @@ const findDifference2Arrays = (nums1, nums2) => {
 
 } // O(N^5) is time complexity
 
+var findDifference = function(nums1, nums2) {
+    const nums1Len = nums1.length;
+    const nums1Map = new Map();
+    const nums2Len = nums2.length;
+    const nums2Map = new Map();
+    let nums1Arr = [];
+    let nums2Arr = [];
+
+    for(i=0; i<nums2Len; i++) {
+             nums2Map.set(nums2[i], 'k'); //[[1,k],[2,k]]
+    }
+
+
+    for(i=0; i<nums1Len; i++) {
+        nums1Map.set(nums1[i], 'k'); 
+        if(!nums2Map.has(nums1[i])) {  //1
+            nums1Arr.push(nums1[i]); 
+        }
+    }
+
+
+    for(i=0; i<nums2Len; i++) {
+          if(!nums1Map.has(nums2[i])) {  //1
+            nums2Arr.push(nums2[i]); 
+        }
+    
+    }
+
+return [Array.from(new Set(nums1Arr)), Array.from(new Set(nums2Arr))];
+    
+}; // O(N) is time complexity
+
 console.log(findDifference2Arrays([1, 2, 3], [2, 4, 6]));
 console.log(findDifference2Arrays([1, 2, 3, 3], [1, 1, 2, 2]));
 console.log(findDifference2Arrays([0, 0, 3, 3], [3, 1, 2, 2, 0]));
